@@ -25,11 +25,7 @@ public class CustomerServiceImpl implements CustomerService {
     public Customer createCustomer(Customer customer) throws CustomerException {
 
 
-//		Customer exsistingcustomer = cDao.findByMobileNo(customer.getMobileNo());
-//
-//		if (exsistingcustomer != null) {
-//			throw new CustomerException("customer already registerd with mobile number!!");
-//		}
+
         Wallet w = new Wallet();
         w.setWalletBalance(10000);
         customer.setWallet(w);
@@ -39,17 +35,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Customer updateCustomer(Customer customer, String key) throws CustomerException {
-//		currentUserSession loggedInUser = sDao.findByUuid(key);
-//
-//		if (loggedInUser == null) {
-//			throw new CustomerException("please provide the valid key to update the customer!!");
-//		}
 
-//		if (customer.getCustomerId() == loggedInUser.getUserId()) {
-//			return cDao.save(customer);
-//		} else {
-//			throw new CustomerException("invalid customer details, please login first!!");
-//		}
 
         return cDao.save(customer);
 
